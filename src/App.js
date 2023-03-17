@@ -38,14 +38,16 @@ function App() {
 
   useEffect(() => {
     startTimer();
-  });
+  }, []);
+
+  useEffect(() => timerDays && console.log(new Array(timerDays).fill('🦊').toString()), [timerDays]);
 
   return (
     <div className="App">
       <Clock
         timerDays={timerDays}
         timerHours={timerHours}
-        timerMiliseconds={timerMinutes}
+        timerMinutes={timerMinutes}
         timerSeconds={timerSeconds}
       />
     </div>
